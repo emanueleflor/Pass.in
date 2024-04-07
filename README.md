@@ -1,43 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentação do Pass.in</title>
-</head>
-<body>
-    <h1>Pass.in - Documentação do Sistema</h1>
+## Pass.in
 
-    <h2>Requisitos Funcionais</h2>
-    <ul>
-        <li>O organizador deve poder cadastrar um novo evento;</li>
-        <li>O organizador deve poder visualizar dados de um evento;</li>
-        <li>O organizador deve poder visualizar a lista de participantes;</li>
-        <li>O participante deve poder se inscrever em um evento;</li>
-        <li>O participante deve poder visualizar seu crachá de inscrição;</li>
-        <li>O participante deve poder realizar check-in no evento;</li>
-    </ul>
+O Pass.in é uma aplicação de gestão de participantes em eventos presenciais.
 
-    <h2>Regras de Negócio</h2>
-    <ul>
-        <li>O participante só pode se inscrever em um evento uma única vez;</li>
-        <li>O participante só pode se inscrever em eventos com vagas disponíveis;</li>
-        <li>O participante só pode realizar check-in em um evento uma única vez;</li>
-    </ul>
+A ferramenta permite que o organizador cadastre um evento e abra uma página pública de inscrição.
 
-    <h2>Requisitos Não-Funcionais</h2>
-    <ul>
-        <li>O check-in no evento será realizado através de um QRCode;</li>
-    </ul>
+Os participantes inscritos podem emitir uma credencial para check-in no dia do evento.
 
-    <h2>Documentação da API (Swagger)</h2>
-    <p>Para documentação da API, acesse o link: <a href="https://nlw-unite-nodejs.onrender.com/docs">https://nlw-unite-nodejs.onrender.com/docs</a></p>
+O sistema fará um scan da credencial do participante para permitir a entrada no evento.
 
-    <h2>Diagrama ERD do Banco de Dados</h2>
-    <p>Inserir aqui uma imagem do Diagrama ERD do banco de dados</p>
+### Requisitos
 
-    <h2>Estrutura do Banco de Dados (SQL)</h2>
-    <pre><code>
+#### Requisitos funcionais
+
+- O organizador deve poder cadastrar um novo evento;
+- O organizador deve poder visualizar dados de um evento;
+- O organizador deve poser visualizar a lista de participantes;
+- O participante deve poder se inscrever em um evento;
+- O participante deve poder visualizar seu crachá de inscrição;
+- O participante deve poder realizar check-in no evento;
+
+#### Regras de negócio
+
+- O participante só pode se inscrever em um evento uma única vez;
+- O participante só pode se inscrever em eventos com vagas disponíveis;
+- O participante só pode realizar check-in em um evento uma única vez;
+
+#### Requisitos não-funcionais
+
+- O check-in no evento será realizado através de um QRCode;
+
+### Documentação da API (Swagger)
+
+Para documentação da API, acesse o link: [Documentação da API](https://nlw-unite-nodejs.onrender.com/docs)
+
+### Banco de dados
+
+Nessa aplicação vamos utilizar banco de dados relacional (SQL). Para ambiente de desenvolvimento seguiremos com o SQLite pela facilidade do ambiente.
+
+#### Diagrama ERD
+
+![Diagrama ERD do banco de dados](link_para_imagem)
+
+#### Estrutura do banco (SQL)
+
+```sql
 -- CreateTable
 CREATE TABLE "events" (
     "id" TEXT NOT NULL PRIMARY KEY,
@@ -73,6 +79,3 @@ CREATE UNIQUE INDEX "attendees_event_id_email_key" ON "attendees"("event_id", "e
 
 -- CreateIndex
 CREATE UNIQUE INDEX "check_ins_attendeeId_key" ON "check_ins"("attendeeId");
-    </code></pre>
-</body>
-</html>
