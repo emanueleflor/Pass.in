@@ -1,6 +1,6 @@
 import fastify from "fastify";
 import fastifySwagger from "@fastify/swagger";
-const fastifySwaggerUI = require('@fastify/swagger-ui');
+import fastifySwaggerUI from "@fastify/swagger-ui";
 import fastifyCors from "@fastify/cors";
 
 import { serializerCompiler, validatorCompiler, jsonSchemaTransform } from "fastify-type-provider-zod";
