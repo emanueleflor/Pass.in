@@ -1,0 +1,33 @@
+POST http://localhost:3333/events
+Content-Type: application/json
+
+    {
+        "title":"Novo evento2",
+        "details": "Evento para outra regra",
+        "maximumAttendees": 1
+    }
+
+###
+POST http://localhost:3333/events/bc00b0ac-17d0-4103-8f44-5d9ce57d2b5e/attendees
+Content-Type: application/json
+
+{
+    "name": "LELIANE",
+    "email": "uau@pla.com"
+}
+
+###
+GET http://localhost:3333/events/bc00b0ac-17d0-4103-8f44-5d9ce57d2b5e
+
+
+###
+GET http://localhost:3333/attendee/4/badge
+
+###
+GET http://localhost:3333/attendees/4/check-in
+
+###
+GET http://localhost:3333/events/bc00b0ac-17d0-4103-8f44-5d9ce57d2b5e/attendees
+
+###
+GET http://localhost:3333/events/bc00b0ac-17d0-4103-8f44-5d9ce57d2b5e/attendees?query=leli
