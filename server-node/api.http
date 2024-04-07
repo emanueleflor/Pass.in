@@ -2,9 +2,9 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
     {
-        "title":"Novo evento2",
+        "title":"Evnento da unite ",
         "details": "Evento para outra regra",
-        "maximumAttendees": 1
+        "maximumAttendees": 50
     }
 
 ###
